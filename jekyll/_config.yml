@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on
   the web.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://danpaz.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: danpazsoldan
 github_username:  danpaz
 disqus:
