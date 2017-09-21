@@ -26,7 +26,7 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 
 Then I saw this in the jekyll docs:
 
-![Source Files Must be in the Root Directory]({{ site.url }}/img/jekyll-source-files-root.png)
+![Source Files Must be in the Root Directory]({{ site.baseurl }}/img/jekyll-source-files-root.png)
 
 > GitHub Pages overrides the “Site Source” configuration value, so if you locate your files anywhere other than the root directory, your site may not build correctly.
 

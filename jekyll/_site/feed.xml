@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2017-09-20T22:04:44-04:00</updated><id>http://localhost:4000/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2017-09-20T22:06:34-04:00</updated><id>http://localhost:4000/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
 </subtitle><entry><title type="html">Hosting a Jekyll blog on GitHub pages in a subfolder</title><link href="http://localhost:4000/blog/jekyll/2017/09/20/jekyll-in-subfolder.html" rel="alternate" type="text/html" title="Hosting a Jekyll blog on GitHub pages in a subfolder" /><published>2017-09-20T00:00:00-04:00</published><updated>2017-09-20T00:00:00-04:00</updated><id>http://localhost:4000/blog/jekyll/2017/09/20/jekyll-in-subfolder</id><content type="html" xml:base="http://localhost:4000/blog/jekyll/2017/09/20/jekyll-in-subfolder.html">&lt;p&gt;&lt;strong&gt;TLDR: I commit the output of jekyll build and use a symbolic link to point
 &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/jekyll/_site&lt;/code&gt;. Works great!&lt;/strong&gt;&lt;/p&gt;
 
@@ -20,7 +20,7 @@ baseurl: &quot;/blog&quot; # the subpath of your site, e.g. /blog
 
 &lt;p&gt;Then I saw this in the jekyll docs:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/jekyll-source-files-root.png&quot; alt=&quot;Source Files Must be in the Root Directory&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/img/jekyll-source-files-root.png&quot; alt=&quot;Source Files Must be in the Root Directory&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;GitHub Pages overrides the “Site Source” configuration value, so if you locate your files anywhere other than the root directory, your site may not build correctly.&lt;/p&gt;
