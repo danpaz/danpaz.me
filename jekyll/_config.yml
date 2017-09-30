@@ -24,7 +24,7 @@ twitter_username: danpazsoldan
 github_username:  danpaz
 disqus:
   shortname: http-danpaz-me-blog
-
+google_analytics: UA-53116939-2
 # Build settings
 markdown: kramdown
 theme: minima
