@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>My first homebrew formula</title>
+<meta name="description" content="I recently wrote a small note taking cli tool called notem and wanted to distribute it via Homebrew. There is documentation on how to do this as well as exam...">
+
+<link rel="stylesheet" href="/blog/assets/main.css">
+<link rel="canonical" href="http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula.html">
+<link rel="alternate" type="application/rss+xml" title="danpaz on the internet" href="/blog/feed.xml">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@danpaz">
+<meta name="twitter:creator" content="@danpaz">
+
+  <meta name="twitter:title" content="My first homebrew formula">
+
+
+  <meta name="twitter:url" content="http://danpaz.me/homebrew/2017/10/04/first-homebrew-formula.html">
+
+
+  <meta name="twitter:description" content="Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+">
+
+
+  <meta name="twitter:image:src" content="/blog/img/headshot.png">
+
+
+
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53116939-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  
+
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/blog/">danpaz on the internet</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/blog/about/">About</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">My first homebrew formula</h1>
+    <p class="post-meta">
+      <time datetime="2017-10-04T00:00:00-04:00" itemprop="datePublished">
+        
+        Oct 4, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I recently wrote a small note taking cli tool called <a href="https://github.com/danpaz/notem">notem</a>
+and wanted to distribute it via <a href="https://brew.sh/">Homebrew</a>. There is documentation
+on how to do this as well as examples around the internet but I still found it a
+bit tricky to figure out how things all work together.</p>
+
+<h2 id="so-you-want-to-brew">So you want to brew</h2>
+
+<p>Homebrew essentially manages packages in a GitHub repo, and adding a new package
+to the registry comes down to making a git branch and pull request to the repo.</p>
+
+<p>You’ll need:</p>
+<ul>
+  <li>Homebrew installed</li>
+  <li>A binary you want to distribute to folks</li>
+  <li>A public url to that binary</li>
+</ul>
+
+<p>To get a public url I published my program to a new GitHub repo (danpaz/notem).
+Then I gave it a git tag so that GitHub would generate a tagged release
+automatically based on that tag.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>git add . <span class="o">&amp;&amp;</span> git commit -m <span class="s2">"Initial commit"</span>
+git tag 0.0.1
+git push <span class="o">&amp;&amp;</span> git push --tags
+
+</code></pre>
+</div>
+
+<p>This results in a tar archive available at https://github.com/danpaz/notem/archive/0.0.1.tar.gz.</p>
+
+<h2 id="formulas">Formulas</h2>
+
+<p>Next I had to write a <a href="https://docs.brew.sh/Formula-Cookbook.html">formula</a>, a
+ruby script that tells Homebrew how to install the package. The
+<code class="highlighter-rouge">brew create &lt;url&gt;</code> command helps out by creating the boilerplate file with
+space for me to define the installation of my binary.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>brew create https://github.com/danpaz/notem/archive/0.0.1.tar.gz
+</code></pre>
+</div>
+
+<p>This created a file for me at /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/notem.rb.
+I deleted the comment blocks and filled in the <code class="highlighter-rouge">install</code> and <code class="highlighter-rouge">test</code> function
+bodies. Here’s what I ended up with:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Notem</span> <span class="o">&lt;</span> <span class="no">Formula</span>
+  <span class="n">desc</span> <span class="s2">"Super simple note taking system"</span>
+  <span class="n">homepage</span> <span class="s2">"https://github.com/danpaz/notem"</span>
+  <span class="n">url</span> <span class="s2">"https://github.com/danpaz/notem/archive/0.0.1.tar.gz"</span>
+  <span class="n">sha256</span> <span class="s2">"e9aa372dcce352938d0042b96a782de4dd319a5aceeae74dbfdac1c5ba1084f8"</span>
+
+  <span class="k">def</span> <span class="nf">install</span>
+    <span class="c1"># Add a symlink to my binary.</span>
+    <span class="n">bin</span><span class="p">.</span><span class="nf">install</span> <span class="s2">"notem"</span>
+  <span class="k">end</span>
+
+  <span class="nb">test</span> <span class="k">do</span>
+    <span class="c1"># Run a command to verify the install. I think this command has to exit with</span>
+    <span class="c1"># status 0 to pass the test.</span>
+    <span class="nb">system</span> <span class="s2">"</span><span class="si">#{</span><span class="n">bin</span><span class="si">}</span><span class="s2">/notem"</span><span class="p">,</span> <span class="s2">"-l"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>For <code class="highlighter-rouge">install</code>, I added <code class="highlighter-rouge">bin.install "notem"</code> to add my binary to the user’s path.
+For <code class="highlighter-rouge">test</code> I added <code class="highlighter-rouge">system "#{bin}/notem", "-l"</code> which verifies my binary runs
+successfully after install.</p>
+
+<p>I found it useful to refer to other packages’ formulas. As mentioned earlier
+these are all on GitHub. For example, <a href="https://github.com/Homebrew/homebrew-core/blob/master/Formula/tmux.rb">here’s the tmux formula</a>.</p>
+
+<p>To verify I ran</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>brew audit --new-formula notem
+</code></pre>
+</div>
+
+<p>and got this output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>notem:
+  * GitHub repository not notable enough (&lt;20 forks, &lt;20 watchers and &lt;50 stars)
+  * GitHub repository too new (&lt;30 days old)
+Error: 2 problems in 1 formula
+</code></pre>
+</div>
+
+<p>Ouch.</p>
+
+<h2 id="tap-out">Tap out</h2>
+
+<p>So my hot new program isn’t official enough for Homebrew.
+Luckily you can still publish your binary as a <a href="https://docs.brew.sh/brew-tap.html">tap</a>,
+a third-party repository.</p>
+
+<p>Users can then install with an extra command, like this:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>brew tap danpaz/tap
+brew install notem
+</code></pre>
+</div>
+
+<p>That’s good enough for me! Let’s set it up.</p>
+
+<p>I created a new repo called danpaz/homebrew-tap, and this repo will house all of
+my future brew formulas. In that repo I copied over my <code class="highlighter-rouge">notem</code> formula from earlier:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>cp /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/notem.rb ./Formula
+</code></pre>
+</div>
+
+<p>And <code class="highlighter-rouge">git push</code>ed that to GitHub. That’s it! Now <code class="highlighter-rouge">brew tap danpaz/tap</code> will clone
+this repo to the user’s Taps and let them install my package with <code class="highlighter-rouge">brew install notem</code>.</p>
+
+<h2 id="helpful-links">Helpful links</h2>
+
+<ul>
+  <li>https://docs.brew.sh/Formula-Cookbook.html</li>
+  <li>https://speakerdeck.com/defeated/homebrew-publish-your-first-formula</li>
+  <li>http://kylebebak.github.io/post/distribute-program-via-homebrew</li>
+</ul>
+
+<p>-D</p>
+
+  </div>
+
+  
+    
+
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula.html';
+      this.page.identifier = 'http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula.html';
+    };
+
+    (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = 'https://http-danpaz-me-blog.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">danpaz on the internet</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              danpaz on the internet
+            
+            </li>
+            
+            <li><a href="mailto:hello@danpaz.me">hello@danpaz.me</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/danpaz"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">danpaz</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/danpazsoldan"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">danpazsoldan</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
