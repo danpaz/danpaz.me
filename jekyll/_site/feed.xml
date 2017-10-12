@@ -1,5 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-10-04T22:10:16-04:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
-</subtitle><entry><title type="html">My first homebrew formula</title><link href="http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula.html" rel="alternate" type="text/html" title="My first homebrew formula" /><published>2017-10-04T00:00:00-04:00</published><updated>2017-10-04T00:00:00-04:00</updated><id>http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula</id><content type="html" xml:base="http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula.html">&lt;p&gt;I recently wrote a small note taking cli tool called &lt;a href=&quot;https://github.com/danpaz/notem&quot;&gt;notem&lt;/a&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-10-12T13:56:56-04:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+</subtitle><entry><title type="html">Empire Conf Takeaways Day 1</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 1" /><published>2017-10-12T00:00:00-04:00</published><updated>2017-10-12T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html">&lt;h2 id=&quot;bauhaus-in-the-browser&quot;&gt;Bauhaus in the Browser&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Justin McDowell&lt;/em&gt; &lt;a href=&quot;https://twitter.com/revoltpuppy/&quot;&gt;@revoltpuppy&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Inspired by Bauhaus movement in 1920s Germany.&lt;/li&gt;
+  &lt;li&gt;Recent browser specs give us the tools to apply the principles of bauhaus on the web.&lt;/li&gt;
+  &lt;li&gt;Viewport units - &lt;code class=&quot;highlighter-rouge&quot;&gt;vh&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt;, consistent text size and placement for any viewport.
+    &lt;ul&gt;
+      &lt;li&gt;Check out &lt;a href=&quot;https://www.youtube.com/watch?v=XanhwddQ-PM&quot;&gt;Stop thinking in Pixels by Keith Grant&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Perspective transforms - &lt;code class=&quot;highlighter-rouge&quot;&gt;perspective&lt;/code&gt; - modify distance from 3D plane.&lt;/li&gt;
+  &lt;li&gt;Grid - flexible layouts using &lt;code class=&quot;highlighter-rouge&quot;&gt;grid&lt;/code&gt; - keep proportional with viewport units.
+    &lt;ul&gt;
+      &lt;li&gt;Check out &lt;a href=&quot;https://gridbyexample.com/&quot;&gt;Grid by Example by Rachel Andrew&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Shapes - &lt;code class=&quot;highlighter-rouge&quot;&gt;shape-outside&lt;/code&gt; - flow text around arbitrary shapes.&lt;/li&gt;
+  &lt;li&gt;Blending modes - &lt;code class=&quot;highlighter-rouge&quot;&gt;mix-blend-mode&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;background-blend-mode&lt;/code&gt;, - blend overlapping layers together.
+    &lt;ul&gt;
+      &lt;li&gt;Check out &lt;a href=&quot;https://vimeo.com/183578252&quot;&gt;Practical Blend Modes by Una Kravets&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;developing-for-localization&quot;&gt;Developing for Localization&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Katie Kurkoski&lt;/em&gt; &lt;a href=&quot;https://twitter.com/KatieK2/&quot;&gt;@KatieK2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;https://katiek2.github.io/localization-links-2017&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Localized content / dynamic content reveals unexpected edge cases in layout and text changes.&lt;/li&gt;
+  &lt;li&gt;These are CSS techniques to allow flexible layout to handle different languages and user generated content.&lt;/li&gt;
+  &lt;li&gt;Different languages take up a different amount of space so don’t assume size of text boxes.
+    &lt;ul&gt;
+      &lt;li&gt;Spanish and German tend to be longer than English.&lt;/li&gt;
+      &lt;li&gt;Japanese and Hebrew tend to be much shorter.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Don’t put copy in images. Cannot be translated by the browser – use HTML instead.&lt;/li&gt;
+  &lt;li&gt;Avoid &lt;code class=&quot;highlighter-rouge&quot;&gt;text-transform&lt;/code&gt; because it changes content in unexpected ways.
+    &lt;ul&gt;
+      &lt;li&gt;Uppercase German &lt;code class=&quot;highlighter-rouge&quot;&gt;SS&lt;/code&gt;, Dutch &lt;code class=&quot;highlighter-rouge&quot;&gt;IJ&lt;/code&gt;, are handled differently by different browsers.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Quote marks in different languages &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&amp;lt;&lt;/code&gt;. Use css pseudo class, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;q:lang(de)&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Tricky side padding and width on headlines with unpredictable length.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;orphans&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;widows&lt;/code&gt; in CSS to declare minimum number of hanging words.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Groups of boxes using flexbox and &lt;code class=&quot;highlighter-rouge&quot;&gt;margin: auto&lt;/code&gt; - vertical alignment is trivial, browser support is great!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lets-go-on-a-data-bender&quot;&gt;Let’s Go on a Data Bender&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Mike Vattuone&lt;/em&gt; &lt;a href=&quot;https://twitter.com/mvattuone/&quot;&gt;@mvattuone&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Databending is the process of manipulating data in unintended ways to achieve unpredictable results.&lt;/li&gt;
+  &lt;li&gt;Why? “The excitement of witnessing events too momentous for the medium assigned to record them” - Brian Eno.&lt;/li&gt;
+  &lt;li&gt;Incorrect Editing - editing files with a different format.&lt;/li&gt;
+  &lt;li&gt;Reinterpretation - converting data using an unintended process.&lt;/li&gt;
+  &lt;li&gt;Forced Errors - intentionally exploiting bugs to generate unexpected output (MISSINGNO pokemon).&lt;/li&gt;
+  &lt;li&gt;Use Audacity audio effects on images.&lt;/li&gt;
+  &lt;li&gt;AudioShop cli tool to script this.&lt;/li&gt;
+  &lt;li&gt;For realtime, use javascript!
+    &lt;ul&gt;
+      &lt;li&gt;Convert image (or video) to audio buffer, apply audio transforms with WebAudio API, use canvas to display.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/Theodeus/tuna&quot;&gt;Tuna.js&lt;/a&gt; for the audio effects.&lt;/li&gt;
+      &lt;li&gt;Demo on github pages (awesome!): [link]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Experiment and play is the first step to finding the practical applications.&lt;/li&gt;
+  &lt;li&gt;Be creative and do things differently.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;from-barely-ready-to-total-betty-how-js-picked-out-my-outfit&quot;&gt;From Barely Ready to Total Betty: How JS Picked Out My Outfit&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Justin Falcone&lt;/em&gt; &lt;a href=&quot;https://twitter.com/modernserf/&quot;&gt;@modernserf&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Recommendation algorithms are “just” databases.&lt;/li&gt;
+  &lt;li&gt;Collect -&amp;gt; Focus pattern.
+    &lt;ul&gt;
+      &lt;li&gt;Database queries and regex are ways to extract bits of data from large collections.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;It’s not “Big Data” but “Big Meaning”
+    &lt;ul&gt;
+      &lt;li&gt;Sculpting possibility space - narrow down infinite possibilities.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Forming outfits comes down to defining relationships between items &lt;code class=&quot;highlighter-rouge&quot;&gt;article&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;formality&lt;/code&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Graph database fits this system.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ML approach - training data is all known good outfits - but this probably doesn’t exist.&lt;/li&gt;
+  &lt;li&gt;“Expert Systems” is an alternative approach to this problem.
+    &lt;ul&gt;
+      &lt;li&gt;“Rules of Fashion” (abridged)
+        &lt;ul&gt;
+          &lt;li&gt;Pants &amp;amp; shoes must coordinate tones&lt;/li&gt;
+          &lt;li&gt;Shirts &amp;amp; pants must not be same color&lt;/li&gt;
+          &lt;li&gt;All clothes must fit same formality level&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We typically approach these problems in a human, imperative way “if this then that”, sequence of steps. Usually turns into nested loops.&lt;/li&gt;
+  &lt;li&gt;Solve this by encoding meaning in the relationships, the algorithm does not change.&lt;/li&gt;
+  &lt;li&gt;Declarative approach lets us see the problem all at once.&lt;/li&gt;
+  &lt;li&gt;“Decentering the algorithm” - data could do so much on our behalf.
+    &lt;ul&gt;
+      &lt;li&gt;Example: HTML and CSS.&lt;/li&gt;
+      &lt;li&gt;Invert the dependency between meaning and computation.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;network-not-included&quot;&gt;Network Not Included&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Carmen Bourlon&lt;/em&gt; &lt;a href=&quot;https://twitter.com/carmalou/&quot;&gt;@carmalou&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Using offline apps to improve accessibility. Network connection is now essential for daily life.&lt;/li&gt;
+  &lt;li&gt;Inconsistent internet access vs lack of access.&lt;/li&gt;
+  &lt;li&gt;A lot of people’s only consistent internet access is via smartphone.&lt;/li&gt;
+  &lt;li&gt;How do we address this need
+    &lt;ul&gt;
+      &lt;li&gt;Take apps offline:
+        &lt;ul&gt;
+          &lt;li&gt;Use Electron&lt;/li&gt;
+          &lt;li&gt;Watch for connection with event listeners.&lt;/li&gt;
+          &lt;li&gt;Bundle database into the app.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Make hybrid mobile apps:
+        &lt;ul&gt;
+          &lt;li&gt;Check for network connectivity and make use of local storage.&lt;/li&gt;
+          &lt;li&gt;Be mindful of users’ mobile data caps and smartphone hard drive space.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Downloadable documentation:
+        &lt;ul&gt;
+          &lt;li&gt;Use electron for docs, or PDF.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;At minimum, consider how to handle loss of connection.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;vuejs-in-practice-hybridizing-objects-and-functions&quot;&gt;Vue.js in Practice: Hybridizing Objects and Functions&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Betsy Haibel&lt;/em&gt; &lt;a href=&quot;https://twitter.com/betsythemuffin/&quot;&gt;@betsythemuffin&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Patterns useful for managing large Vue.js apps, but will apply to anything else.&lt;/li&gt;
+  &lt;li&gt;“Reactive Programming” is just like Microsoft Excel.
+    &lt;ul&gt;
+      &lt;li&gt;When data changes, fields that observe that data also change.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Computed properties automatically updates when its dependencies change.&lt;/li&gt;
+  &lt;li&gt;This is two-way data binding(!).
+    &lt;ul&gt;
+      &lt;li&gt;It is not evil.&lt;/li&gt;
+      &lt;li&gt;Naïve implementation causes problems with unexpected state changes.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Needs an observability strategy: &lt;code class=&quot;highlighter-rouge&quot;&gt;vuex&lt;/code&gt; Vue-style global state management.&lt;/li&gt;
+  &lt;li&gt;Use partial application to share computed property logic.&lt;/li&gt;
+  &lt;li&gt;Vuex store is just a dumb Vue instance.
+    &lt;ul&gt;
+      &lt;li&gt;Then we can extend the Vue object with our props and computed props.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We shouldn’t feel obligation to purity of technique.&lt;/li&gt;
+  &lt;li&gt;Vue has opinions, but Vue will get out of your way if you decide on a different approach.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-D&lt;/p&gt;</content><author><name></name></author><summary type="html">Bauhaus in the Browser</summary></entry><entry><title type="html">My first homebrew formula</title><link href="http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula.html" rel="alternate" type="text/html" title="My first homebrew formula" /><published>2017-10-04T00:00:00-04:00</published><updated>2017-10-04T00:00:00-04:00</updated><id>http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula</id><content type="html" xml:base="http://danpaz.me/blog/homebrew/2017/10/04/first-homebrew-formula.html">&lt;p&gt;I recently wrote a small note taking cli tool called &lt;a href=&quot;https://github.com/danpaz/notem&quot;&gt;notem&lt;/a&gt;
 and wanted to distribute it via &lt;a href=&quot;https://brew.sh/&quot;&gt;Homebrew&lt;/a&gt;. There is documentation
 on how to do this as well as examples around the internet but I still found it a
 bit tricky to figure out how things all work together.&lt;/p&gt;
