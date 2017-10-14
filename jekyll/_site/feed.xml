@@ -1,5 +1,258 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-10-12T13:56:56-04:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
-</subtitle><entry><title type="html">Empire Conf Takeaways Day 1</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 1" /><published>2017-10-12T00:00:00-04:00</published><updated>2017-10-12T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html">&lt;h2 id=&quot;bauhaus-in-the-browser&quot;&gt;Bauhaus in the Browser&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-10-14T16:50:26-04:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+</subtitle><entry><title type="html">Empire Conf Takeaways Day 2</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 2" /><published>2017-10-14T00:00:00-04:00</published><updated>2017-10-14T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html">&lt;h2 id=&quot;the-rise-of-http2&quot;&gt;The rise of HTTP/2&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Daniela Matos de Carvalho&lt;/em&gt; &lt;a href=&quot;https://twitter.com/sericaia/&quot;&gt;@sericaia&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTTP 0.9 -&amp;gt; 1.0 -&amp;gt; 1.1. Single connection per request to keep-alive.&lt;/li&gt;
+  &lt;li&gt;Head of Line (HOL) blocking. Requires strict order.&lt;/li&gt;
+  &lt;li&gt;Introduced HTTP/2, fathered by SPDY.
+    &lt;ul&gt;
+      &lt;li&gt;Streams&lt;/li&gt;
+      &lt;li&gt;Resource prioritization (implemented even before HTTP/2)&lt;/li&gt;
+      &lt;li&gt;Header compression&lt;/li&gt;
+      &lt;li&gt;Push&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Try &lt;a href=&quot;https://www.wireshark.org/&quot;&gt;Wireshark&lt;/a&gt; to inspect network activity!&lt;/li&gt;
+  &lt;li&gt;To use HTTP/2 with node: Experimental stage 1, behind feature flag &lt;code class=&quot;highlighter-rouge&quot;&gt;node --expose-http2 index.js&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Check out examples at https://github.com/sericaia/http2-examples-empireconf.&lt;/li&gt;
+  &lt;li&gt;“But I use express/hapi!”
+    &lt;ul&gt;
+      &lt;li&gt;Not yet ready but soon it will be similar&lt;/li&gt;
+      &lt;li&gt;Should be in hapi 17.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use Push.
+    &lt;ul&gt;
+      &lt;li&gt;In server request handler we can pre push assets to http2 stream.&lt;/li&gt;
+      &lt;li&gt;Push css, images, etc.&lt;/li&gt;
+      &lt;li&gt;Then these won’t be requested by the page later.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Browsers won’t let you use HTTP/2 without a real TLS connection.
+    &lt;ul&gt;
+      &lt;li&gt;Test locally without SSL: open chrome with &lt;code class=&quot;highlighter-rouge&quot;&gt;--ignore-certificate-errors&lt;/code&gt; flag :)&lt;/li&gt;
+      &lt;li&gt;But this won’t fully work.&lt;/li&gt;
+      &lt;li&gt;Use &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;credentials:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'include'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; in service worker request handler.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;a-brief-history-of-prototypes&quot;&gt;A Brief History of Prototypes&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Kat Marchan&lt;/em&gt; &lt;a href=&quot;https://twitter.com/maybekatz/&quot;&gt;@maybekatz&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Prototype-Based Object-Oriented Programming: What is it? What is the history? Why did we do this?
+    &lt;ul&gt;
+      &lt;li&gt;In class based languages, overriding behavior requires adding a new class.&lt;/li&gt;
+      &lt;li&gt;In prototype based languages, you can clone to reuse parent’s code. Known as &lt;em&gt;delegation&lt;/em&gt;.&lt;/li&gt;
+      &lt;li&gt;Even JS class syntax papers over prototypes.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The very beginning: &lt;strong&gt;Director&lt;/strong&gt; programming language (1976). The “Actor Model.”
+    &lt;ul&gt;
+      &lt;li&gt;Used message passing with &lt;code class=&quot;highlighter-rouge&quot;&gt;ask&lt;/code&gt;, optional asynchronous event loop, delegation based inheritance.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Object(Lisp)&lt;/strong&gt; (1985).
+    &lt;ul&gt;
+      &lt;li&gt;Used for lisp machine UI. Similar to 2017 JS.&lt;/li&gt;
+      &lt;li&gt;This is validating to the semantics we&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Self&lt;/strong&gt; (1987).
+    &lt;ul&gt;
+      &lt;li&gt;Built on top of class-based Smalltalk language but with prototypes.&lt;/li&gt;
+      &lt;li&gt;Ease of use of a dynamic system but speed to match lower level languages.&lt;/li&gt;
+      &lt;li&gt;Biggest influence on modern JS.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lambdamoo&lt;/strong&gt; (1990).
+    &lt;ul&gt;
+      &lt;li&gt;Prototypes for play.&lt;/li&gt;
+      &lt;li&gt;Text-based MUD (multi user dungeon) - online multiplayer text based games.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lua&lt;/strong&gt;  (1993).
+    &lt;ul&gt;
+      &lt;li&gt;Metatables is like objects&lt;/li&gt;
+      &lt;li&gt;Small language used for gaming.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;&lt;/em&gt; (1995).
+    &lt;ul&gt;
+      &lt;li&gt;Famously put together in 10 days.&lt;/li&gt;
+      &lt;li&gt;Most widely used prototype language in the world 🌏.&lt;/li&gt;
+      &lt;li&gt;Prototypes were a great fit for the DOM.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The Future of JS.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;More interactive dev&lt;/strong&gt;: hope the need for webpack/babel starts to disappear.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Web components&lt;/strong&gt; are natural evolution of the platform.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Keep JS easy&lt;/strong&gt;: simple easy to learn languages drive adoption. Immediate results are delightful.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;why-static-typing-matters-or-how-to-solve-all-your-runtime-errors-with-this-one-neat-trick&quot;&gt;Why Static Typing Matters (or How to Solve All Your Runtime Errors With This One Neat Trick)&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Eli Perkins&lt;/em&gt; &lt;a href=&quot;https://twitter.com/_eliperkins/&quot;&gt;@_eliperkins&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Static typing -&amp;gt; types are known at compile time.&lt;/li&gt;
+  &lt;li&gt;Dynamic -&amp;gt; type checking at run time.&lt;/li&gt;
+  &lt;li&gt;Types are discovered by &lt;em&gt;annotation&lt;/em&gt; or &lt;em&gt;inference&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;In JS: Flow and Typescript. Roughly equivalent tools.&lt;/li&gt;
+  &lt;li&gt;Avoid whole classes of errors before our programs run.
+    &lt;ul&gt;
+      &lt;li&gt;Type mismatches.&lt;/li&gt;
+      &lt;li&gt;Unexpected &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;s.&lt;/li&gt;
+      &lt;li&gt;Typos.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Why do we care?
+    &lt;ul&gt;
+      &lt;li&gt;Bugs are suprises: static types reduce surprises.&lt;/li&gt;
+      &lt;li&gt;Errors at run time: users pay the cost. At compile time: developers pay the cost.&lt;/li&gt;
+      &lt;li&gt;In Objective-C this leads to app crashes.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Swift - strong static typed language that interops with Obj C.
+    &lt;ul&gt;
+      &lt;li&gt;At Venmo: introduced static typing slowly, starting at the network layer.&lt;/li&gt;
+      &lt;li&gt;Added high confidence in a critical piece of the stack.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;What’s next for static typing in JS?
+    &lt;ul&gt;
+      &lt;li&gt;Elm
+        &lt;ul&gt;
+          &lt;li&gt;Generates JS with no run time exceptions.&lt;/li&gt;
+          &lt;li&gt;Understands your API surface, tells you what semver version bump you need.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;ReasonML
+        &lt;ul&gt;
+          &lt;li&gt;Syntax and toolchain for OCaml that compiles to JS.&lt;/li&gt;
+          &lt;li&gt;Pattern matching over union types is cool.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Check out Dan Grossman, Programming Languages course on coursera: https://www.coursera.org/learn/programming-languages.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bad-performance-is-the-root-of-all-evil&quot;&gt;Bad Performance is the Root of All Evil&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Dave Thompson&lt;/em&gt; &lt;a href=&quot;https://twitter.com/limscoder/&quot;&gt;@limscoder&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Don’t optimize before you measure.&lt;/li&gt;
+  &lt;li&gt;Not measuring performance is the root of all evil .&lt;/li&gt;
+  &lt;li&gt;RAIL model (or, LIAR model)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;L&lt;/strong&gt;oad - initial side load - 1000ms.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;dle - perform background tasks.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;nimation - javascript, render, paint - 16ms or 60fps for no jank.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt;esponse - delays in interactions - 100ms (should display indicator when &amp;gt; 500ms).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use “Performance” tab in chrome dev tools.&lt;/li&gt;
+  &lt;li&gt;Simple rules to follow:
+    &lt;ul&gt;
+      &lt;li&gt;Optimize network.
+        &lt;ul&gt;
+          &lt;li&gt;Reduce file size. img &lt;code class=&quot;highlighter-rouge&quot;&gt;srcset&lt;/code&gt; attribute. Configure cache headers. Use http2. CDN.&lt;/li&gt;
+          &lt;li&gt;Sequential code -&amp;gt; parallel code -&amp;gt; lazy code.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Optimize interaction response.
+        &lt;ul&gt;
+          &lt;li&gt;Make use of &lt;em&gt;idle time&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;requestIdleCallback&lt;/code&gt; fallback to &lt;code class=&quot;highlighter-rouge&quot;&gt;requestAnimationFrame&lt;/code&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Long frames.
+        &lt;ul&gt;
+          &lt;li&gt;Use “Bottom Up” in devtools to identify slow JS functions.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Simulate slowness with network and cpu throttling.&lt;/li&gt;
+  &lt;li&gt;Understand your webpack and babel configs!&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse&quot;&gt;Lighthouse&lt;/a&gt; audit to help identify and fix common problems.&lt;/li&gt;
+  &lt;li&gt;Slides: https://github.com/limscoder/react-present.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;programming-101-learn-english&quot;&gt;Programming 101: Learn English&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Vanessa Yuen&lt;/em&gt; &lt;a href=&quot;https://twitter.com/vanessayuenn/&quot;&gt;@vanessayuenn&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All popular programming languages are written in English.&lt;/li&gt;
+  &lt;li&gt;Today to be a programmer you &lt;em&gt;have to learn English&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Hurdles:
+    &lt;ul&gt;
+      &lt;li&gt;Memorizing a bunch of words. What if “function” means nothing to you? Reserved words.&lt;/li&gt;
+      &lt;li&gt;Coding in a foreign language is basically like coding in emoji http://www.emojicode.org&lt;/li&gt;
+      &lt;li&gt;Asking questions when you’re lost is even harder in a foreign language. Imposter syndrome ++&lt;/li&gt;
+      &lt;li&gt;Stack Overflow explicitly states: “Questions written in non-English should be closed”&lt;/li&gt;
+      &lt;li&gt;You have to convince people you can communicate. Fluency != communication skills.&lt;/li&gt;
+      &lt;li&gt;Half translated, maybe outdated docs.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How to do better: Make learning accessible regardless of language.
+    &lt;ul&gt;
+      &lt;li&gt;Node - 50% learned Node in their non-native language.&lt;/li&gt;
+      &lt;li&gt;Good documentation translation is a bridge between all users.&lt;/li&gt;
+      &lt;li&gt;Great example: Angular Chinese docs.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Empathy&lt;/strong&gt; &amp;amp; patience.&lt;/li&gt;
+      &lt;li&gt;Remember your story is not their story.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We have a responsibility to level out the playing field. Diversity in language benefits all.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;architecture-as-text-setup-aws-lambda-api-gateway-sns-and-dynamodb-on-easy-mode&quot;&gt;Architecture as Text: Setup AWS Lambda, API Gateway, SNS, and DynamoDB on Easy Mode&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Angelina Fabbro&lt;/em&gt; &lt;a href=&quot;https://twitter.com/hopefulcyborg/&quot;&gt;@hopefulcyborg&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Leveraging new tools in AWS: Lambda, S3, DynamoDB.&lt;/li&gt;
+  &lt;li&gt;Not a lot of tools for configuration and deployment.&lt;/li&gt;
+  &lt;li&gt;AWS console / cli is not a great experience. “Kitchen sink UI.”&lt;/li&gt;
+  &lt;li&gt;Serverless == functions as a service. Amazon abstracts the server altogether.&lt;/li&gt;
+  &lt;li&gt;Many parts needed to do anything meaningful:
+    &lt;ul&gt;
+      &lt;li&gt;Route 53 (DNS)&lt;/li&gt;
+      &lt;li&gt;API Gateway (routing)&lt;/li&gt;
+      &lt;li&gt;Lambda (your code)&lt;/li&gt;
+      &lt;li&gt;DynamoDB (optional sessions)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Existing infrastructure-as-code tools (terraform, serverless, AWS SAM)
+    &lt;ul&gt;
+      &lt;li&gt;Describing every resource is verbose and time consuming.&lt;/li&gt;
+      &lt;li&gt;Deep proprietary knowledge required.&lt;/li&gt;
+      &lt;li&gt;Difficult to read JSON, no comments.&lt;/li&gt;
+      &lt;li&gt;Adds cognitive overhead.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Move to &lt;strong&gt;architecture as text&lt;/strong&gt;, plaintext manifest file
+    &lt;ul&gt;
+      &lt;li&gt;Minimal &lt;code class=&quot;highlighter-rouge&quot;&gt;.arc&lt;/code&gt; file.&lt;/li&gt;
+      &lt;li&gt;Describes how to provision all of the parts.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i @architect/workflows --save&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deploys are fast and boring.&lt;/li&gt;
+  &lt;li&gt;https://arc.codes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;-D&lt;/p&gt;</content><author><name></name></author><summary type="html">The rise of HTTP/2</summary></entry><entry><title type="html">Empire Conf Takeaways Day 1</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 1" /><published>2017-10-12T00:00:00-04:00</published><updated>2017-10-12T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html">&lt;h2 id=&quot;bauhaus-in-the-browser&quot;&gt;Bauhaus in the Browser&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Justin McDowell&lt;/em&gt; &lt;a href=&quot;https://twitter.com/revoltpuppy/&quot;&gt;@revoltpuppy&lt;/a&gt;&lt;/p&gt;
 
