@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-10-14T16:50:26-04:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-10-14T16:59:01-04:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
 </subtitle><entry><title type="html">Empire Conf Takeaways Day 2</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 2" /><published>2017-10-14T00:00:00-04:00</published><updated>2017-10-14T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html">&lt;h2 id=&quot;the-rise-of-http2&quot;&gt;The rise of HTTP/2&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Daniela Matos de Carvalho&lt;/em&gt; &lt;a href=&quot;https://twitter.com/sericaia/&quot;&gt;@sericaia&lt;/a&gt;&lt;/p&gt;
@@ -16,7 +16,7 @@
   &lt;/li&gt;
   &lt;li&gt;Try &lt;a href=&quot;https://www.wireshark.org/&quot;&gt;Wireshark&lt;/a&gt; to inspect network activity!&lt;/li&gt;
   &lt;li&gt;To use HTTP/2 with node: Experimental stage 1, behind feature flag &lt;code class=&quot;highlighter-rouge&quot;&gt;node --expose-http2 index.js&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Check out examples at https://github.com/sericaia/http2-examples-empireconf.&lt;/li&gt;
+  &lt;li&gt;Check out examples at &lt;a href=&quot;https://github.com/sericaia/http2-examples-empireconf&quot;&gt;https://github.com/sericaia/http2-examples-empireconf&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;“But I use express/hapi!”
     &lt;ul&gt;
       &lt;li&gt;Not yet ready but soon it will be similar&lt;/li&gt;
@@ -142,7 +142,7 @@
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Check out Dan Grossman, Programming Languages course on coursera: https://www.coursera.org/learn/programming-languages.&lt;/li&gt;
+  &lt;li&gt;Check out Dan Grossman, Programming Languages course on coursera: &lt;a href=&quot;https://www.coursera.org/learn/programming-languages&quot;&gt;https://www.coursera.org/learn/programming-languages&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;bad-performance-is-the-root-of-all-evil&quot;&gt;Bad Performance is the Root of All Evil&lt;/h2&gt;
@@ -184,7 +184,7 @@
   &lt;li&gt;Simulate slowness with network and cpu throttling.&lt;/li&gt;
   &lt;li&gt;Understand your webpack and babel configs!&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/GoogleChrome/lighthouse&quot;&gt;Lighthouse&lt;/a&gt; audit to help identify and fix common problems.&lt;/li&gt;
-  &lt;li&gt;Slides: https://github.com/limscoder/react-present.&lt;/li&gt;
+  &lt;li&gt;Slides: &lt;a href=&quot;https://github.com/limscoder/react-present&quot;&gt;https://github.com/limscoder/react-present&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;programming-101-learn-english&quot;&gt;Programming 101: Learn English&lt;/h2&gt;
@@ -197,7 +197,7 @@
   &lt;li&gt;Hurdles:
     &lt;ul&gt;
       &lt;li&gt;Memorizing a bunch of words. What if “function” means nothing to you? Reserved words.&lt;/li&gt;
-      &lt;li&gt;Coding in a foreign language is basically like coding in emoji http://www.emojicode.org&lt;/li&gt;
+      &lt;li&gt;Coding in a foreign language is basically like coding in emoji &lt;a href=&quot;http://www.emojicode.org&quot;&gt;http://www.emojicode.org&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;Asking questions when you’re lost is even harder in a foreign language. Imposter syndrome ++&lt;/li&gt;
       &lt;li&gt;Stack Overflow explicitly states: “Questions written in non-English should be closed”&lt;/li&gt;
       &lt;li&gt;You have to convince people you can communicate. Fluency != communication skills.&lt;/li&gt;
@@ -249,7 +249,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Deploys are fast and boring.&lt;/li&gt;
-  &lt;li&gt;https://arc.codes&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://arc.codes&quot;&gt;https://arc.codes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;-D&lt;/p&gt;</content><author><name></name></author><summary type="html">The rise of HTTP/2</summary></entry><entry><title type="html">Empire Conf Takeaways Day 1</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 1" /><published>2017-10-12T00:00:00-04:00</published><updated>2017-10-12T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/12/empireconf-takeaways-day-1.html">&lt;h2 id=&quot;bauhaus-in-the-browser&quot;&gt;Bauhaus in the Browser&lt;/h2&gt;
@@ -282,7 +282,7 @@
 
 &lt;p&gt;&lt;em&gt;Katie Kurkoski&lt;/em&gt; &lt;a href=&quot;https://twitter.com/KatieK2/&quot;&gt;@KatieK2&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;https://katiek2.github.io/localization-links-2017&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://katiek2.github.io/localization-links-2017&quot;&gt;https://katiek2.github.io/localization-links-2017&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Localized content / dynamic content reveals unexpected edge cases in layout and text changes.&lt;/li&gt;

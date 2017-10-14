@@ -26,7 +26,7 @@ _Justin McDowell_ [@revoltpuppy](https://twitter.com/revoltpuppy/)
 
 _Katie Kurkoski_ [@KatieK2](https://twitter.com/KatieK2/)
 
-https://katiek2.github.io/localization-links-2017
+<https://katiek2.github.io/localization-links-2017>
 
 - Localized content / dynamic content reveals unexpected edge cases in layout and text changes.
 - These are CSS techniques to allow flexible layout to handle different languages and user generated content.

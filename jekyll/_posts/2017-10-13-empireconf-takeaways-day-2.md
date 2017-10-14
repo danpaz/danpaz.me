@@ -19,7 +19,7 @@ _Daniela Matos de Carvalho_ [@sericaia](https://twitter.com/sericaia/)
   - Push
 - Try [Wireshark](https://www.wireshark.org/) to inspect network activity!
 - To use HTTP/2 with node: Experimental stage 1, behind feature flag `node --expose-http2 index.js`.
-- Check out examples at https://github.com/sericaia/http2-examples-empireconf.
+- Check out examples at <https://github.com/sericaia/http2-examples-empireconf>.
 - "But I use express/hapi!"
   - Not yet ready but soon it will be similar
   - Should be in hapi 17.
@@ -92,7 +92,7 @@ _Eli Perkins_ [@_eliperkins](https://twitter.com/_eliperkins/)
   - ReasonML
     - Syntax and toolchain for OCaml that compiles to JS.
     - Pattern matching over union types is cool.
-- Check out Dan Grossman, Programming Languages course on coursera: https://www.coursera.org/learn/programming-languages.
+- Check out Dan Grossman, Programming Languages course on coursera: <https://www.coursera.org/learn/programming-languages>.
 
 
 ## Bad Performance is the Root of All Evil
@@ -118,7 +118,7 @@ _Dave Thompson_ [@limscoder](https://twitter.com/limscoder/)
 - Simulate slowness with network and cpu throttling.
 - Understand your webpack and babel configs!
 - [Lighthouse](https://github.com/GoogleChrome/lighthouse) audit to help identify and fix common problems.
-- Slides: https://github.com/limscoder/react-present.
+- Slides: <https://github.com/limscoder/react-present>.
 
 
 ## Programming 101: Learn English
@@ -129,7 +129,7 @@ _Vanessa Yuen_ [@vanessayuenn](https://twitter.com/vanessayuenn/)
 - Today to be a programmer you _have to learn English_.
 - Hurdles:
   - Memorizing a bunch of words. What if "function" means nothing to you? Reserved words.
-  - Coding in a foreign language is basically like coding in emoji http://www.emojicode.org
+  - Coding in a foreign language is basically like coding in emoji <http://www.emojicode.org>
   - Asking questions when you're lost is even harder in a foreign language. Imposter syndrome ++
   - Stack Overflow explicitly states: "Questions written in non-English should be closed"
   - You have to convince people you can communicate. Fluency != communication skills.
@@ -166,7 +166,7 @@ _Angelina Fabbro_ [@hopefulcyborg](https://twitter.com/hopefulcyborg/)
   - Describes how to provision all of the parts.
   - `npm i @architect/workflows --save`
 - Deploys are fast and boring.
-- https://arc.codes
+- <https://arc.codes>
 
 
 -D
