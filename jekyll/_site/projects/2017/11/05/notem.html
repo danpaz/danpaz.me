@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Notem: simple notes from the command line</title>
-<meta name="description" content="Notem: simple notes from the command line">
+<meta name="description" content="I thought I’d write a quick post about notem – my first Rust project! – why I made it, who it’s for, and a little about my experience writing it in Rust.">
 
 <link rel="stylesheet" href="/blog/assets/main.css">
 <link rel="canonical" href="http://danpaz.me/blog/projects/2017/11/05/notem.html">
@@ -110,16 +110,14 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="notem-simple-notes-from-the-command-line">Notem: simple notes from the command line</h2>
-
-<p>I thought I’d write a quick post about [notem][notem] – my first <a href="https://www.rust-lang.org/">Rust</a>
+    <p>I thought I’d write a quick post about <a href="https://github.com/danpaz/notem">notem</a> – my first <a href="https://www.rust-lang.org/">Rust</a>
 project! – why I made it, who it’s for, and a little about my experience
 writing it in Rust.</p>
 
-<h2 id="why-i-wrote-it">Why I wrote it</h2>
+<h2 id="why">Why</h2>
 
-<p>I wrote notem to solve a persistent problem in my day-to-day at work:
-I almost always forget to take notes! In meetings, pairing sessions, sprint
+<p>I wrote notem to solve a frequent problem in my day-to-day work:
+I almost always forget to take notes! In meetings, pairing sessions, and sprint
 planning, taking notes help me stay focused and to quickly review main takeaways
 after the meeting. And when working on a ticket, taking notes helps me organize
 my thoughts and plan of action before diving into code.</p>
@@ -148,7 +146,7 @@ This directory quickly fills up, so I added a command to help me find old notes:
 </code></pre>
 </div>
 
-<p>which will output the path of the same note we just created. I can quickly open
+<p>which will output the path of the same note I just created. I can quickly open
 up that note with sublime using the <code class="highlighter-rouge">subl</code> command:</p>
 
 <div class="language-sh highlighter-rouge"><pre class="highlight"><code>subl <span class="k">$(</span>notem --search sprint planning<span class="k">)</span>
@@ -166,12 +164,12 @@ that’s great 😺.</p>
 
 <h2 id="whats-this-rust-thing">What’s this Rust thing?</h2>
 
-<p><a href="https://www.rust-lang.org/">Rust</a> is a really interesting systems programming language that
-focuses on performance and memory safety. Coming from the web development world
-where JavaScript is king, getting into Rust has been a great learning experience
-for me. I’ve used the opportunity to learn more about concepts that rarely come
-up when writing in an interpreted dynamic language, like memory management,
-thread safety, type checking, compilation.</p>
+<p><a href="https://www.rust-lang.org/">Rust</a> is a systems programming language that focuses on performance and
+memory safety. Coming from the web development world where JavaScript is king,
+getting into Rust has been a great learning experience for me. I’ve used the
+opportunity to learn more about concepts that rarely come up when writing in an
+interpreted dynamic language, like memory management, thread safety, type
+checking, compilation.</p>
 
 <p>This was a great starter project for me to learn Rust! The first incarnation of
 notem was a <a href="https://github.com/danpaz/notem/blob/e811fff4eb65be3ec62573c489b4c50136a97764/notem">bash script</a> so I had a clear idea of the functionality I wanted
@@ -179,15 +177,15 @@ to provide and the commands to build. That helped a lot in getting over the
 initial barrier of “what do I write.” In making notem I also got exposed to some
 of the fundamental rust apis like <a href="https://doc.rust-lang.org/std/env/">std::env</a> and <a href="https://doc.rust-lang.org/std/fs/">std::fs</a>.
 While notem is far from idiomatic rust, and it lacks tests and docs, it was a
-good first project.</p>
+good first project to get my feet wet with the language.</p>
 
 <p>I have a lot more to say on Rust but I’ll save that for a future post.</p>
 
-<h2 id="check-it-out">Check it out!</h2>
+<h2 id="check-it-out">Check it out</h2>
 
 <p>If you’re interested in checking out notem you can find the source on GitHub at
-https://github.com/danpaz/notem, and the rust crate is published at crates.io
-https://crates.io/crates/notem. Thanks for reading!</p>
+<a href="https://github.com/danpaz/notem">https://github.com/danpaz/notem</a>, and the rust crate is published at crates.io
+<a href="https://crates.io/crates/notem">https://crates.io/crates/notem</a>. Thanks for reading!</p>
 
 <p>-D</p>
 
