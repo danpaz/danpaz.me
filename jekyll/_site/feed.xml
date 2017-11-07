@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-11-06T20:05:34-05:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-11-06T20:09:04-05:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
 </subtitle><entry><title type="html">Notem: simple notes from the command line</title><link href="http://danpaz.me/blog/projects/2017/11/05/notem.html" rel="alternate" type="text/html" title="Notem: simple notes from the command line" /><published>2017-11-05T23:00:00-05:00</published><updated>2017-11-05T23:00:00-05:00</updated><id>http://danpaz.me/blog/projects/2017/11/05/notem</id><content type="html" xml:base="http://danpaz.me/blog/projects/2017/11/05/notem.html">&lt;p&gt;I thought I’d write a quick post about &lt;a href=&quot;https://github.com/danpaz/notem&quot;&gt;notem&lt;/a&gt; – my first &lt;a href=&quot;https://www.rust-lang.org/&quot;&gt;Rust&lt;/a&gt;
 project! – why I made it, who it’s for, and a little about my experience
 writing it in Rust.&lt;/p&gt;
@@ -45,7 +45,8 @@ up that note with sublime using the &lt;code class=&quot;highlighter-rouge&quot;
 &lt;h2 id=&quot;whos-it-for&quot;&gt;Who’s it for&lt;/h2&gt;
 
 &lt;p&gt;I think this tool could be useful for anyone who, like me, struggles to
-incorporate note taking into their day-to-day.&lt;/p&gt;
+incorporate note taking into their day-to-day, but almost always has a terminal
+window open. A new notepad is just a few keystrokes away.&lt;/p&gt;
 
 &lt;p&gt;But honestly this tool might only be useful for myself. It solves 80% of my
 problem and fits smoothly into my workflow, so if it’s useful to anyone else
