@@ -1,5 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-10-14T16:59:01-04:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
-</subtitle><entry><title type="html">Empire Conf Takeaways Day 2</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 2" /><published>2017-10-14T00:00:00-04:00</published><updated>2017-10-14T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html">&lt;h2 id=&quot;the-rise-of-http2&quot;&gt;The rise of HTTP/2&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://danpaz.me/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://danpaz.me/blog/" rel="alternate" type="text/html" /><updated>2017-11-06T19:59:16-05:00</updated><id>http://danpaz.me/blog/</id><title type="html">danpaz on the internet</title><subtitle>Tech and sometimes-not-tech blog by Daniel Paz-Soldan, also known as danpaz on the web.
+</subtitle><entry><title type="html">Notem: simple notes from the command line</title><link href="http://danpaz.me/blog/projects/2017/11/05/notem.html" rel="alternate" type="text/html" title="Notem: simple notes from the command line" /><published>2017-11-05T23:00:00-05:00</published><updated>2017-11-05T23:00:00-05:00</updated><id>http://danpaz.me/blog/projects/2017/11/05/notem</id><content type="html" xml:base="http://danpaz.me/blog/projects/2017/11/05/notem.html">&lt;h2 id=&quot;notem-simple-notes-from-the-command-line&quot;&gt;Notem: simple notes from the command line&lt;/h2&gt;
+
+&lt;p&gt;I thought I’d write a quick post about [notem][notem] – my first &lt;a href=&quot;https://www.rust-lang.org/&quot;&gt;Rust&lt;/a&gt;
+project! – why I made it, who it’s for, and a little about my experience
+writing it in Rust.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-i-wrote-it&quot;&gt;Why I wrote it&lt;/h2&gt;
+
+&lt;p&gt;I wrote notem to solve a persistent problem in my day-to-day at work:
+I almost always forget to take notes! In meetings, pairing sessions, sprint
+planning, taking notes help me stay focused and to quickly review main takeaways
+after the meeting. And when working on a ticket, taking notes helps me organize
+my thoughts and plan of action before diving into code.&lt;/p&gt;
+
+&lt;p&gt;My goal was to write a tool that would drastically lower the barrier to start
+writing notes like these. I also wanted to have these notes organized in a
+simple way so I can sanely look back through old notes. Prior to notem I would
+open a text editor and save the file to my Desktop, cluttered among the rest of
+my unorganized files.&lt;/p&gt;
+
+&lt;p&gt;I wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;notem&lt;/code&gt; as a command line tool that I can run in any terminal window.
+From the command line, I type:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;notem sprint planning and review
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And by default that  creates a new plain text file in a global folder called
+&lt;code class=&quot;highlighter-rouge&quot;&gt;notes&lt;/code&gt; with today’s date in the filename and the subject of the note, all
+dasherized: &lt;code class=&quot;highlighter-rouge&quot;&gt;2017-11-06-sprint-planning-and-review&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Due to the naming, all files in the notes directory are sorted by created date.
+This directory quickly fills up, so I added a command to help me find old notes:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;notem --search sprint planning
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;which will output the path of the same note we just created. I can quickly open
+up that note with sublime using the &lt;code class=&quot;highlighter-rouge&quot;&gt;subl&lt;/code&gt; command:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;subl &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;notem --search sprint planning&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;whos-it-for&quot;&gt;Who’s it for&lt;/h2&gt;
+
+&lt;p&gt;I think this tool could be useful for anyone who, like me, struggles to
+incorporate note taking into their day-to-day.&lt;/p&gt;
+
+&lt;p&gt;But honestly this tool might only be useful for myself. It solves 80% of my
+problem and fits smoothly into my workflow, so if it’s useful to anyone else
+that’s great 😺.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-this-rust-thing&quot;&gt;What’s this Rust thing?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.rust-lang.org/&quot;&gt;Rust&lt;/a&gt; is a really interesting systems programming language that
+focuses on performance and memory safety. Coming from the web development world
+where JavaScript is king, getting into Rust has been a great learning experience
+for me. I’ve used the opportunity to learn more about concepts that rarely come
+up when writing in an interpreted dynamic language, like memory management,
+thread safety, type checking, compilation.&lt;/p&gt;
+
+&lt;p&gt;This was a great starter project for me to learn Rust! The first incarnation of
+notem was a &lt;a href=&quot;https://github.com/danpaz/notem/blob/e811fff4eb65be3ec62573c489b4c50136a97764/notem&quot;&gt;bash script&lt;/a&gt; so I had a clear idea of the functionality I wanted
+to provide and the commands to build. That helped a lot in getting over the
+initial barrier of “what do I write.” In making notem I also got exposed to some
+of the fundamental rust apis like &lt;a href=&quot;https://doc.rust-lang.org/std/env/&quot;&gt;std::env&lt;/a&gt; and &lt;a href=&quot;https://doc.rust-lang.org/std/fs/&quot;&gt;std::fs&lt;/a&gt;.
+While notem is far from idiomatic rust, and it lacks tests and docs, it was a
+good first project.&lt;/p&gt;
+
+&lt;p&gt;I have a lot more to say on Rust but I’ll save that for a future post.&lt;/p&gt;
+
+&lt;h2 id=&quot;check-it-out&quot;&gt;Check it out!&lt;/h2&gt;
+
+&lt;p&gt;If you’re interested in checking out notem you can find the source on GitHub at
+https://github.com/danpaz/notem, and the rust crate is published at crates.io
+https://crates.io/crates/notem. Thanks for reading!&lt;/p&gt;
+
+&lt;p&gt;-D&lt;/p&gt;</content><author><name></name></author><summary type="html">Notem: simple notes from the command line</summary></entry><entry><title type="html">Empire Conf Takeaways Day 2</title><link href="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html" rel="alternate" type="text/html" title="Empire Conf Takeaways Day 2" /><published>2017-10-14T00:00:00-04:00</published><updated>2017-10-14T00:00:00-04:00</updated><id>http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2</id><content type="html" xml:base="http://danpaz.me/blog/talks/conference/notes/2017/10/14/empireconf-takeaways-day-2.html">&lt;h2 id=&quot;the-rise-of-http2&quot;&gt;The rise of HTTP/2&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Daniela Matos de Carvalho&lt;/em&gt; &lt;a href=&quot;https://twitter.com/sericaia/&quot;&gt;@sericaia&lt;/a&gt;&lt;/p&gt;
 
