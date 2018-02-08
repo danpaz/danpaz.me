@@ -62,11 +62,13 @@
   border-radius: 27px;
   cursor: pointer;
   margin: 10px auto;
+  border: transparent;
 }
 
 .button--blue {
 	width: 185px;
   background-color: #357CD4;
+  border: 1px solid #357CD4;
   margin-left: 16px;
   margin-right: 16px;
 }
