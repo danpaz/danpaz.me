@@ -42,8 +42,14 @@
 }
 
 .description a {
-	color: #307AD7;
+	color: inherit;
 	text-decoration: none;
+}
+
+.description a:hover {
+	color: #307AD7;
+	text-decoration: underline;
+	text-decoration-color: rgba(72, 136, 216, 0.24);
 }
 
 .buttons {
@@ -73,6 +79,10 @@
   margin-right: 16px;
 }
 
+.button--blue:hover {
+	opacity: 0.9;
+}
+
 .button--white {
 	width: 210px;
 	color: #357CD4;
@@ -80,10 +90,14 @@
 	border: 1px solid rgba(0, 0, 0, 0.16);
 }
 
+.button--white:hover {
+	border: 1px solid rgba(0, 0, 0, 0.32);
+}
+
 .social-icons {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 80px;
+	height: 104px;
 	width: 136px;
 	font-size: 24px;
 }
@@ -91,11 +105,19 @@
 .social-icons .fa-twitter {
 	color: #03A9F4;
 }
+
 .social-icons .fa-linkedin {
 	color: #0288D1;
 }
+
 .social-icons .fa-github {
 	color: #000;
+}
+
+.social-icons a:hover {
+	position: relative;
+ 	top: -5px;
+ 	padding-bottom: 5px;
 }
 
 .divider {
